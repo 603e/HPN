@@ -4,7 +4,7 @@
 <%
 	String contextPath = request.getContextPath();
 	SessionInfo sessionInfo = (SessionInfo) session.getAttribute(ConfigUtil.getSessionInfoName());
-	String operaterLoginname =sessionInfo.getUser().getLoginname();
+	String operater =sessionInfo.getUser().getLoginName();
 	String id = request.getParameter("id");
 	if (id == null) {
 		id = "";
@@ -62,7 +62,7 @@
 						'data.url' : result.url,
 						'data.frmResourceType.id' : result.frmResourceType.id,
 						'data.description' : result.description,
-						'data.doresource.id' : result.doresource ? result.doresource.id : '',
+						'data.frmResource.id' : result.frmResource ? result.frmResource.id : '',
 						'data.iconCls' : result.iconCls,
 						'data.seq' : result.seq,
 						'data.target' : result.target
@@ -77,7 +77,7 @@
 </head>
 <body>
 	<form method="post" class="form">
-		<input name="data.operaterLoginname" value="<%=operaterLoginname%>" type="hidden" />
+		<input name="data.operater" value="<%=operater%>" type="hidden" />
 		<fieldset>
 			<legend>资源基本信息</legend>
 			<table class="table" style="width: 100%;">
@@ -95,7 +95,7 @@
 				</tr>
 				<tr>
 					<th>上级资源</th>
-					<td><select id="syresource_id" name="data.doresource.id" class="easyui-combotree" data-options="editable:false,idField:'id',textField:'text',parentField:'pid',url:'<%=contextPath%>/base/frmResource!doNotNeedSecurity_getMainMenu.do'" style="width: 155px;"></select><img class="iconImg ext-icon-cross" onclick="$('#syresource_id').combotree('clear');" title="清空" /></td>
+					<td><select id="syresource_id" name="data.frmResource.id" class="easyui-combotree" data-options="editable:false,idField:'id',textField:'text',parentField:'pid',url:'<%=contextPath%>/base/frmResource!doNotNeedSecurity_getMainMenu.do'" style="width: 155px;"></select><img class="iconImg ext-icon-cross" onclick="$('#syresource_id').combotree('clear');" title="清空" /></td>
 					<th>资源图标</th>
 					<td><input id="iconCls" name="data.iconCls" readonly="readonly" style="padding-left: 18px; width: 134px;" /><img class="iconImg ext-icon-zoom" onclick="showIcons();" title="浏览图标" />&nbsp;<img class="iconImg ext-icon-cross" onclick="$('#iconCls').val('');$('#iconCls').attr('class','');" title="清空" /></td>
 				</tr>

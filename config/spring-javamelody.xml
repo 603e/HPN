@@ -20,7 +20,7 @@
 					<array>
 						<value>zone.framework\.dao\..*</value>
 						<value>zone.framework\.service\..*</value>
-						<value>com.ifr\.service\..*</value>
+						<value>com.hpn\.service\..*</value>
 					</array>
 				</property>
 			</bean>

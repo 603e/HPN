@@ -23,43 +23,112 @@ img{
 	clear:both;
 }
 
-.login{
+.loginMain{
 	width:628px;
 	height: 250px;
 
 	background: url(images/login.png);
 	position: absolute;
 	top:50%;
-	left:50%;
+	left:25%;
 	margin-left: -315px;
 	margin-top: -195px;
 
 	padding-top:150px;
 }
+
+.login{
+	width:994px;
+	height: 320px;
+	position: absolute;
+	margin-left: 180px;
+	margin-top: 80px;
+	padding-top:150px;
+	background: url(images/index.jpg); no-repeat;
+	/* width:428px;
+	height: 250px;
+	position: absolute;
+	background: url(images/login.png) no-repeat;
+	margin-left: 950px;
+	margin-top: 300px;
+	padding-top:150px; */
+}
 .login input{
-	width:231px;
-	height:32px;
+	width:140px;
+	height:25px;
 	line-height: 32px;
-	border:none;
+	border:1;
 	background: none;
 	padding-left:6px;
 }
 .user,.psw{
-	margin-left: 230px;
+	margin-top: -80px;
+	margin-left: 400px;
 }
 .psw{
-	margin-top: 20px;
+	margin-top: 5px;
 }
 .dl{
-	margin-top: 41px;
-	margin-left: 160px;
+	margin-top: 16px;
+	margin-left: 540px;
 }
-input.denglu,input.chongzhi{
-	width:139px;
-	height: 41px;
-
+input.denglu{
+	width:90px;
+	height: 31px;
+	margin-left: -130px;
+	margin-top: -80px;
 	cursor: pointer;
+	background:red;
+	color: #FFFFFF;
 }
-.chongzhi{
-	margin-left: 17px;
+input.chongzhi{
+	width:70px;
+	height: 31px;
+	margin-top: -78px;
+	margin-left: 10px;
+	background:blue;
+	color: #FFFFFF;
+}
+
+
+.main_left {
+	/* float: left; */
+	width:696px;
+	height: 228px;
+	position: absolute;
+	/* top:50%;
+	left:75%; */
+	background: url(images/login.png) no-repeat;
+	margin-left: 250px;
+	margin-top: 120px;
+	padding-top:150px;
+	/* 
+	
+	width: 755px;
+	height: auto;
+	padding-top: 380px;
+	position: absolute;
+	margin-left: 110px;
+	margin-right: 41px;
+	width: 487px;
+	height: 267px; */
+	background: url(images/index.jpg); no-repeat;
+}
+
+.mainl_link {
+	position: relative;
+	bottom: 40px;
+}
+
+.mainl_link a {
+	color: #0a2cbb;
+	margin: 0px 10px;
+}
+
+.main_right {
+	float: left;
+	width: 350px;
+	height: 267px;
+	overflow: hidden;
+	background: url(images/login.png) no-repeat;
 }

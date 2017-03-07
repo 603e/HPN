@@ -15,7 +15,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "FRM_ROLE", schema = "")
+@Table(name = "frm_role", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class RolePO extends Base implements java.io.Serializable {

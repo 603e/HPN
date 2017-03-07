@@ -3,5 +3,5 @@
 	String contextPath = request.getContextPath();
 %>
 <div class="panel-header panel-title" style="text-align: center;">
-	银行代办点 -技术支持<a href="http://www.haohj.xyz/">好环境（北京）科技有限公司</a>
+	<a href="http://www.haohj.xyz/">中国测绘科学研究院</a>
 </div>

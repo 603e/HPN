@@ -24,27 +24,23 @@
 	};
 </script>
 <div id="sessionInfoDiv" style="position: absolute; right: 10px; top: 5px;height: 60px;">
+	博物馆导航导览系统
+	<font size="3" face="arial" color="red">欢迎您！</font>
+	<font size="3" face="arial" color="red"><strong>
 	<%
 		if (sessionInfo != null) {
-			out.print(zone.framework.util.base.StringUtil.formateString("欢迎您，{0}", sessionInfo.getUser().getName()));
+			out.print(zone.framework.util.base.StringUtil.formateString("{0}", sessionInfo.getUser().getName()));
 		}
-	%>
+	%></strong>
+	</font>
 </div>
 <div style="position: absolute; right: 0px; bottom: 0px;">
-	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_pfMenu',iconCls:'ext-icon-rainbow'">更换皮肤</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_kzmbMenu',iconCls:'ext-icon-cog'">控制面板</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_zxMenu',iconCls:'ext-icon-disconnect'">注销</a>
+	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_pfMenu',iconCls:'hpn-icon-cstyle'">更换皮肤</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_kzmbMenu',iconCls:'ext-icon-cog'">控制面板</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_zxMenu',iconCls:'ext-icon-disconnect'">注销</a>
 </div>
 <div id="layout_north_pfMenu" style="width: 120px; display: none;">
 	<div onclick="frm.changeTheme('default');" title="default">default</div>
 	<div onclick="frm.changeTheme('gray');" title="gray">gray</div>
-	<div onclick="frm.changeTheme('metro');" title="metro">metro</div>
 	<div onclick="frm.changeTheme('bootstrap');" title="bootstrap">bootstrap</div>
-	<!-- <div onclick="frm.changeTheme('black');" title="black">black</div>  -->
-	<div class="menu-sep"></div>
-	<div onclick="frm.changeTheme('metro-blue');" title="metro-blue">metro-blue</div>
-	<div onclick="frm.changeTheme('metro-gray');" title="metro-gray">metro-gray</div>
-	<div onclick="frm.changeTheme('metro-green');" title="metro-green">metro-green</div>
-	<div onclick="frm.changeTheme('metro-orange');" title="metro-orange">metro-orange</div>
-	<div onclick="frm.changeTheme('metro-red');" title="metro-red">metro-red</div>
 </div>
 <div id="layout_north_kzmbMenu" style="width: 100px; display: none;">
 	<div data-options="iconCls:'ext-icon-user_edit'" onclick="$('#passwordDialog').dialog('open');">修改密码</div>

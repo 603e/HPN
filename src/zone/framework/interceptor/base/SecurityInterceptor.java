@@ -36,6 +36,7 @@ public class SecurityInterceptor extends MethodFilterInterceptor {
 		Set<RolePO> roles = sessionInfo.getUser().getFrmRoles();
 		for (RolePO role : roles) {
 			for (ResourcePO resource : role.getFrmResources()) {
+				Logger.getLogger(getClass()).info(resource.getUrl());
 				if (resource != null && StringUtils.equals(resource.getUrl(), servletPath)) {
 					return actionInvocation.invoke();
 				}

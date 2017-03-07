@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>资金管理系统</title>
+<title>博物馆导览管理</title>
 <jsp:include page="../inc.jsp"></jsp:include>
 <script type="text/javascript">
 	var mainMenu;
@@ -117,28 +117,28 @@
 			fit : true,
 			border : false,
 			tools : [ {
-				iconCls : 'ext-icon-arrow_up',
+				iconCls : 'hpn-icon-up',
 				handler : function() {
 					mainTabs.tabs({
 						tabPosition : 'top'
 					});
 				}
 			}, {
-				iconCls : 'ext-icon-arrow_left',
+				iconCls : 'hpn-icon-left',
 				handler : function() {
 					mainTabs.tabs({
 						tabPosition : 'left'
 					});
 				}
 			}, {
-				iconCls : 'ext-icon-arrow_down',
+				iconCls : 'hpn-icon-down',
 				handler : function() {
 					mainTabs.tabs({
 						tabPosition : 'bottom'
 					});
 				}
 			}, {
-				iconCls : 'ext-icon-arrow_right',
+				iconCls : 'hpn-icon-right',
 				handler : function() {
 					mainTabs.tabs({
 						tabPosition : 'right'
@@ -146,7 +146,7 @@
 				}
 			}, {
 				text : '刷新',
-				iconCls : 'ext-icon-arrow_refresh',
+				iconCls : 'hpn-icon-refresh',
 				handler : function() {
 					var panel = mainTabs.tabs('getSelected').panel('panel');
 					var frame = panel.find('iframe');
@@ -169,7 +169,7 @@
 				}
 			}, {
 				text : '关闭',
-				iconCls : 'ext-icon-cross',
+				iconCls : 'hpn-icon-shutdown',
 				handler : function() {
 					var index = mainTabs.tabs('getTabIndex', mainTabs.tabs('getSelected'));
 					var tab = mainTabs.tabs('getTab', index);
@@ -204,7 +204,7 @@
 			<table class="table">
 				<tr>
 					<th width="50">登录名</th>
-					<td><%=sessionInfo.getUser().getLoginname()%><input name="data.loginname" readonly="readonly" type="hidden" value="<%=sessionInfo.getUser().getLoginname()%>" /></td>
+					<td><%=sessionInfo.getUser().getLoginName()%><input name="data.loginName" readonly="readonly" type="hidden" value="<%=sessionInfo.getUser().getLoginName()%>" /></td>
 				</tr>
 				<tr>
 					<th>密码</th>

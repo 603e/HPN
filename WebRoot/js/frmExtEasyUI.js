@@ -332,12 +332,12 @@ frm.changeTheme = function(themeName) {
 	var $iframe = $('iframe');
 	if ($iframe.length > 0) {
 		for (var i = 0; i < $iframe.length; i++) {
-			var ifr = $iframe[i];
+			var hpn = $iframe[i];
 			try {
-				$(ifr).contents().find('#easyuiTheme').attr('href', href);
+				$(hpn).contents().find('#easyuiTheme').attr('href', href);
 			} catch (e) {
 				try {
-					ifr.contentWindow.document.getElementById('easyuiTheme').href = href;
+					hpn.contentWindow.document.getElementById('easyuiTheme').href = href;
 				} catch (e) {
 				}
 			}

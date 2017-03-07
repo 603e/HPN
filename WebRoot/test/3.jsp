@@ -87,7 +87,7 @@
 				formatter : function(value, row, index) {
 					var str = '';
 					if ($.canEdit) {
-						str += $.formatString('<img onclick="editFun(\'{0}\');" src="{1}" title="编辑"/>', row.id, '${pageContext.request.contextPath}/style/images/extjs_icons/bug/bug_edit.png');
+						str += $.formatString('<img onclick="editFun(\'{0}\');" src="{1}" title="修改"/>', row.id, '${pageContext.request.contextPath}/style/images/extjs_icons/bug/bug_edit.png');
 					}
 					str += '&nbsp;';
 					if ($.canDelete) {
@@ -137,12 +137,12 @@
 			id = rows[0].id;
 		}
 		parent.$.modalDialog({
-			title : '编辑',
+			title : '修改',
 			width : 790,
 			height : 350,
 			href : '${pageContext.request.contextPath}/cunchuController/editPage?id=' + id,
 			buttons : [ {
-				text : '编辑',
+				text : '修改',
 				handler : function() {
 					parent.$.modalDialog.openner_dataGrid = dataGrid;//因为添加成功之后，需要刷新这个dataGrid，所以先预定义好
 					var f = parent.$.modalDialog.handler.find('#form');
@@ -210,7 +210,7 @@
 	<div id="menu" class="easyui-menu" style="width: 120px; display: none;">
 		<div onclick="addFun();" data-options="iconCls:'pencil_add'">增加</div>
 		<div onclick="deleteFun();" data-options="iconCls:'pencil_delete'">删除</div>
-		<div onclick="editFun();" data-options="iconCls:'pencil'">编辑</div>
+		<div onclick="editFun();" data-options="iconCls:'pencil'">修改</div>
 	</div>
 </body>
 </html>

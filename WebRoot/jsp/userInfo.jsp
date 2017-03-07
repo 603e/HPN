@@ -69,7 +69,7 @@
 							</tr>
 							<tr>
 								<th>登录名</th>
-								<td><%=sessionInfo.getUser().getLoginname()%></td>
+								<td><%=sessionInfo.getUser().getLoginName()%></td>
 								<th>姓名</th>
 								<td><%=sessionInfo.getUser().getName()%></td>
 							</tr>
@@ -89,9 +89,9 @@
 							</tr>
 							<tr>
 								<th>创建时间</th>
-								<td><%=DateUtil.dateToString(sessionInfo.getUser().getCreatedatetime())%></td>
+								<td><%=DateUtil.dateToString(sessionInfo.getUser().getCreateDatetime())%></td>
 								<th>最后修改时间</th>
-								<td><%=DateUtil.dateToString(sessionInfo.getUser().getUpdatedatetime())%></td>
+								<td><%=DateUtil.dateToString(sessionInfo.getUser().getUpdateDatetime())%></td>
 							</tr>
 						</table>
 					</fieldset></td>

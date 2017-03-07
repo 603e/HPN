@@ -362,7 +362,7 @@ public class BaseAction<T> extends ActionSupport {
 		}
 		if (!StringUtils.isBlank(reflectId)) {
 			T t = service.getById(reflectId);
-			BeanUtils.copyNotNullProperties(data, t, new String[] { "createdatetime" });
+			BeanUtils.copyNotNullProperties(data, t, new String[] { "createDatetime " });
 			service.update(t);
 			json.setSuccess(true);
 			json.setMsg("更新成功！");

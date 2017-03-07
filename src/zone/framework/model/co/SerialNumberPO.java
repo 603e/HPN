@@ -12,7 +12,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import zone.framework.model.base.Base;
 
 @Entity
-@Table(name = "FRM_SERIALNUMBER", schema = "")
+@Table(name = "frm_serialNumber", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class SerialNumberPO extends Base implements Serializable{

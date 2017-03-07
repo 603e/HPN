@@ -18,7 +18,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "FRM_USER", schema = "")
+@Table(name = "frm_user", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class UserPO extends Base implements java.io.Serializable {
@@ -30,7 +30,7 @@ public class UserPO extends Base implements java.io.Serializable {
 
 	private String ip;// 此属性不存数据库，虚拟属性
 
-	private String loginname;
+	private String loginName;
 	private String pwd;
 	private String name;
 	private String sex;
@@ -42,13 +42,13 @@ public class UserPO extends Base implements java.io.Serializable {
 	private Set<OrganizationPO> frmOrganizations = new HashSet<OrganizationPO>(0);
 	private Set<RolePO> frmRoles = new HashSet<RolePO>(0);
 
-	@Column(name = "loginname", nullable = false, length = 20)
-	public String getLoginname() {
-		return this.loginname;
+	@Column(name = "loginName", nullable = false, length = 20)
+	public String getLoginName() {
+		return this.loginName;
 	}
 
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
 	}
 
 	@Column(name = "pwd", length = 100)

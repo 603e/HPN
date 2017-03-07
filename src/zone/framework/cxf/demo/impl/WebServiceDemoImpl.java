@@ -39,10 +39,10 @@ public class WebServiceDemoImpl implements WebServiceDemoI {
 		UserPO u = new UserPO();
 		u.setName(user.getName());
 		u.setAge(user.getAge());
-		u.setCreatedatetime(user.getCreatedatetime());
-		u.setUpdatedatetime(user.getUpdatedatetime());
+		u.setCreateDatetime(user.getCreateDatetime());
+		u.setUpdateDatetime(user.getUpdateDatetime());
 		u.setId(user.getId());
-		u.setLoginname(user.getLoginname());
+		u.setLoginName(user.getLoginName());
 		u.setSex(user.getSex());
 		u.setPhoto(user.getPhoto());
 		return u;

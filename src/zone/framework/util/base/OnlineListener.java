@@ -55,7 +55,7 @@ public class OnlineListener implements ServletContextListener, ServletContextAtt
 				OnlineServiceI onlineService = (OnlineServiceI) ctx.getBean("onlineServiceImpl");
 				OnlinePO online = new OnlinePO();
 				online.setType("1");// 登录
-				online.setLoginname(sessionInfo.getUser().getLoginname());
+				online.setLoginName(sessionInfo.getUser().getLoginName());
 				online.setIp(sessionInfo.getUser().getIp());
 				onlineService.save(online);
 			}
@@ -95,7 +95,7 @@ public class OnlineListener implements ServletContextListener, ServletContextAtt
 				OnlineServiceI onlineService = (OnlineServiceI) ctx.getBean("onlineServiceImpl");
 				OnlinePO online = new OnlinePO();
 				online.setType("0");// 注销
-				online.setLoginname(sessionInfo.getUser().getLoginname());
+				online.setLoginName(sessionInfo.getUser().getLoginName());
 				online.setIp(sessionInfo.getUser().getIp());
 				onlineService.save(online);
 			}

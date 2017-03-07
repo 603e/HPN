@@ -37,7 +37,7 @@
 				title : '编辑用户信息',
 				url : frm.contextPath + '/jsp/base/FrmUserForm.jsp?id=' + id,
 				buttons : [ {
-					text : '编辑',
+					text : '修改',
 					handler : function() {
 						dialog.find('iframe').get(0).contentWindow.submitForm(dialog, grid, parent.$);
 					}
@@ -101,14 +101,14 @@
 			pagination : true,
 			singleSelect : true,
 			idField : 'id',
-			sortName : 'createdatetime',
+			sortName : 'createDatetime ',
 			sortOrder : 'desc',
 			pageSize : 50,
 			pageList : [ 10, 20, 30, 40, 50, 100, 200, 300, 400, 500 ],
 			frozenColumns : [ [ {
 				width : '100',
 				title : '登录名',
-				field : 'loginname',
+				field : 'loginName',
 				sortable : true
 			}, {
 				width : '80',
@@ -169,7 +169,7 @@
 						str += frm.formatString('<img class="iconImg ext-icon-note" title="查看" onclick="showFun(\'{0}\');"/>', row.id);
 					<%}%>
 					<%if (securityUtil.havePermission("/base/frmUser!update")) {%>
-						str += frm.formatString('<img class="iconImg ext-icon-note_edit" title="编辑" onclick="editFun(\'{0}\');"/>', row.id);
+						str += frm.formatString('<img class="iconImg ext-icon-note_edit" title="修改" onclick="editFun(\'{0}\');"/>', row.id);
 					<%}%>
 					<%if (securityUtil.havePermission("/base/frmUser!grantRole")) {%>
 						str += frm.formatString('<img class="iconImg ext-icon-user" title="用户角色" onclick="grantRoleFun(\'{0}\');"/>', row.id);
@@ -185,12 +185,12 @@
 			}, {
 				width : '150',
 				title : '创建时间',
-				field : 'createdatetime',
+				field : 'createDatetime ',
 				sortable : true
 			}, {
 				width : '150',
 				title : '修改时间',
-				field : 'updatedatetime',
+				field : 'updateDatetime',
 				sortable : true
 			},  ] ],
 			toolbar : '#toolbar',
@@ -216,7 +216,7 @@
 						<table>
 							<tr>
 								<td>登录名</td>
-								<td><input name="QUERY_t#loginname_S_LK" style="width: 80px;" /></td>
+								<td><input name="QUERY_t#loginName_S_LK" style="width: 80px;" /></td>
 								<td>姓名</td>
 								<td><input name="QUERY_t#name_S_LK" style="width: 80px;" /></td>
 								<td>性别</td>
@@ -224,7 +224,7 @@
 										<option value="1">男</option>
 										<option value="0">女</option></select></td>
 								<td>创建时间</td>
-								<td><input name="QUERY_t#createdatetime_D_GE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" />-<input name="QUERY_t#createdatetime_D_LE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" /></td>
+								<td><input name="QUERY_t#createDatetime _D_GE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" />-<input name="QUERY_t#createDatetime _D_LE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" /></td>
 								<td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'ext-icon-zoom',plain:true" onclick="grid.datagrid('load',frm.serializeObject($('#searchForm')));">过滤</a><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'ext-icon-zoom_out',plain:true" onclick="$('#searchForm input').val('');grid.datagrid('load',{});">重置过滤</a></td>
 							</tr>
 						</table>

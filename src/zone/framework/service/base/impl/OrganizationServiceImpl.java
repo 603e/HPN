@@ -35,7 +35,7 @@ public class OrganizationServiceImpl extends BaseServiceImpl<OrganizationPO> imp
 		if (!StringUtils.isBlank(frmOrganization.getId())) {
 			OrganizationPO t = getById(frmOrganization.getId());
 			OrganizationPO oldParent = t.getFrmOrganization();
-			BeanUtils.copyNotNullProperties(frmOrganization, t, new String[] { "createdatetime" });
+			BeanUtils.copyNotNullProperties(frmOrganization, t, new String[] { "createDatetime " });
 			if (frmOrganization.getFrmOrganization() != null) {// 说明要修改的节点选中了上级节点
 				OrganizationPO pt = getById(frmOrganization.getFrmOrganization().getId());// 上级节点
 				isParentToChild(t, pt, oldParent);// 说明要将当前节点修改到当前节点的子或者孙子下

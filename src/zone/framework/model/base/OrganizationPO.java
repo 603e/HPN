@@ -20,7 +20,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "FRM_ORGANIZATION", schema = "")
+@Table(name = "frm_organization", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class OrganizationPO extends Base implements java.io.Serializable {
@@ -41,7 +41,7 @@ public class OrganizationPO extends Base implements java.io.Serializable {
 	private Set<ResourcePO> frmResources = new HashSet<ResourcePO>(0);
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ORGANIZATION_ID")
+	@JoinColumn(name = "organization_id")
 	public OrganizationPO getFrmOrganization() {
 		return this.frmOrganization;
 	}

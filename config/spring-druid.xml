@@ -19,7 +19,7 @@
 		<property name="patterns">
 			<list>
 				<value>zone.framework.service.*</value>
-				<value>com.ifr.service.*</value>
+				<value>com.hpn.service.*</value>
 			</list>
 		</property>
 	</bean>

@@ -72,7 +72,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserPO> implements UserServ
 			params.put("a", k);
 			params.put("b", k + 2);
 			k = k + 2;
-			l.add(count("select count(*) from UserPO t where HOUR(t.createdatetime)>=:a and HOUR(t.createdatetime)<:b", params));
+			l.add(count("select count(*) from UserPO t where HOUR(t.createDatetime )>=:a and HOUR(t.createDatetime )<:b", params));
 		}
 		return l;
 	}

@@ -20,14 +20,14 @@
 			pagination : true,
 			singleSelect : true,
 			idField : 'id',
-			sortName : 'createdatetime',
+			sortName : 'createDatetime ',
 			sortOrder : 'desc',
 			pageSize : 100,
 			pageList : [ 10, 20, 30, 40, 50, 100, 200, 300, 400, 500, 1000 ],
 			frozenColumns : [ [ {
 				width : '100',
 				title : '登录名',
-				field : 'loginname',
+				field : 'loginName',
 				sortable : true
 			}, {
 				width : '300',
@@ -38,7 +38,7 @@
 			columns : [ [ {
 				width : '150',
 				title : '创建时间',
-				field : 'createdatetime',
+				field : 'createDatetime ',
 				sortable : true
 			}, {
 				width : '100',
@@ -77,7 +77,7 @@
 						<table>
 							<tr>
 								<td>登录名</td>
-								<td><input name="QUERY_t#loginname_S_LK" style="width: 80px;" /></td>
+								<td><input name="QUERY_t#loginName_S_LK" style="width: 80px;" /></td>
 								<td>IP地址</td>
 								<td><input name="QUERY_t#ip_S_LK" style="width: 80px;" /></td>
 								<td>类别</td>
@@ -85,7 +85,7 @@
 										<option value="1">登录系统</option>
 										<option value="0">注销系统</option></select></td>
 								<td>创建时间</td>
-								<td><input name="QUERY_t#createdatetime_D_GE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" />-<input name="QUERY_t#createdatetime_D_LE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" /></td>
+								<td><input name="QUERY_t#createDatetime _D_GE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" />-<input name="QUERY_t#createDatetime _D_LE" class="Wdate" onclick="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly="readonly" style="width: 120px;" /></td>
 								<td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'ext-icon-zoom',plain:true" onclick="grid.datagrid('load',frm.serializeObject($('#searchForm')));">过滤</a><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'ext-icon-zoom_out',plain:true" onclick="$('#searchForm input').val('');grid.datagrid('load',{});">重置过滤</a></td>
 							</tr>
 						</table>

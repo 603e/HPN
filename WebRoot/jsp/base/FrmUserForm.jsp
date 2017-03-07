@@ -4,7 +4,7 @@
 <%
 	String contextPath = request.getContextPath();
 	SessionInfo sessionInfo = (SessionInfo) session.getAttribute(ConfigUtil.getSessionInfoName());
-	String operaterLoginname =sessionInfo.getUser().getLoginname();
+	String operater =sessionInfo.getUser().getLoginName();
 	String id = request.getParameter("id");
 	if (id == null) {
 		id = "";
@@ -63,7 +63,7 @@
 					$('form').form('load', {
 						'data.id' : result.id,
 						'data.name' : result.name,
-						'data.loginname' : result.loginname,
+						'data.loginName' : result.loginName,
 						'data.sex' : result.sex,
 						'data.age' : result.age,
 						'data.frmOrganization.id' : result.frmOrganization.id,
@@ -176,7 +176,7 @@
 </head>
 <body>
 	<form method="post" class="form">
-		<input name="data.operaterLoginname" value="<%=operaterLoginname%>" type="hidden" />
+		<input name="data.operater" value="<%=operater%>" type="hidden" />
 		<fieldset>
 			<legend>用户基本信息</legend>
 			<table class="table" style="width: 100%;">
@@ -184,7 +184,7 @@
 					<th>编号</th>
 					<td><input name="data.id" value="<%=id%>" readonly="readonly" /></td>
 					<th>登陆名称</th>
-					<td><input name="data.loginname" class="easyui-validatebox" data-options="required:true" /></td>
+					<td><input name="data.loginName" class="easyui-validatebox" data-options="required:true" /></td>
 				</tr>
 				<tr>
 					<th>姓名</th>

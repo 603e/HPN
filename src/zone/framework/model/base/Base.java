@@ -14,10 +14,10 @@ import org.apache.commons.lang3.StringUtils;
 public class Base {
 
 	private String id;
-	private String operaterLoginname;
+	private String operater;
 	private int deleteFlag;
-	private Date createdatetime;
-	private Date updatedatetime;
+	private Date createDatetime;
+	private Date updateDatetime;
 	@Id
 	@Column(name = "id", unique = true, nullable = false, length = 36)
 	public String getId() {
@@ -28,18 +28,18 @@ public class Base {
 	}	
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "createdatetime", length = 7)
-	public Date getCreatedatetime() {
-		if (this.createdatetime != null)
-			return this.createdatetime;
+	@Column(name = "createDatetime", length = 7)
+	public Date getCreateDatetime() {
+		if (this.createDatetime != null)
+			return this.createDatetime;
 		return new Date();
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "updatedatetime", length = 7)
-	public Date getUpdatedatetime() {
-		if (this.updatedatetime != null)
-			return this.updatedatetime;
+	@Column(name = "updateDatetime", length = 7)
+	public Date getUpdateDatetime() {
+		if (this.updateDatetime != null)
+			return this.updateDatetime;
 		return new Date();
 	}
 	@Column(name = "deleteFlag", length = 1)
@@ -54,21 +54,21 @@ public class Base {
 		this.id = id;
 	}
 
-	public void setCreatedatetime(Date createdatetime) {
-		this.createdatetime = createdatetime;
+	public void setCreateDatetime(Date createDatetime) {
+		this.createDatetime = createDatetime;
 	}
 	
-	public void setUpdatedatetime(Date updatedatetime) {
-		this.updatedatetime = updatedatetime;
+	public void setUpdateDatetime(Date updateDatetime) {
+		this.updateDatetime = updateDatetime;
 	}
 
-	@Column(name = "operaterLoginname", nullable = false, length = 20)
-	public String getOperaterLoginname() {
-		return operaterLoginname;
+	@Column(name = "operater", nullable = false, length = 20)
+	public String getOperater() {
+		return operater;
 	}
 
-	public void setOperaterLoginname(String operaterLoginname) {
-		this.operaterLoginname = operaterLoginname;
+	public void setOperater(String operater) {
+		this.operater = operater;
 	}
 
 	

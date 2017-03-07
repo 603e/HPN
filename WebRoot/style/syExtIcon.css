@@ -1,10 +1,18 @@
 img {	cursor: pointer; }
 
-.logo {	background: url('images/sshe.png') no-repeat; height: 60px;}
+.logo {	
+	background: url('images/sshe.png'); 
+	height: 60px;}
 
 .iconImg {
 	width: 16px;
 	height: 16px;
+	cursor: pointer;
+}
+
+.controlImg {
+	width: 48px;
+	height: 48px;
 	cursor: pointer;
 }
 
@@ -2013,3 +2021,29 @@ img {	cursor: pointer; }
 .ext-icon-zoom_in {	background: url('images/ext_icons/zoom/zoom_in.png') no-repeat ; }
 
 .ext-icon-zoom_out {	background: url('images/ext_icons/zoom/zoom_out.png') no-repeat ; }
+
+.hpn-icon-collections {	background: url('images/hpn_icons/collections.png') no-repeat ; }
+
+.hpn-icon-down {	background: url('images/hpn_icons/down.png') no-repeat ; }
+
+.hpn-icon-left {	background: url('images/hpn_icons/left.png') no-repeat ; }
+
+.hpn-icon-right {	background: url('images/hpn_icons/right.png') no-repeat ; }
+
+.hpn-icon-up {	background: url('images/hpn_icons/up.png') no-repeat ; }
+
+.hpn-icon-shutdown {	background: url('images/hpn_icons/shutdown.png') no-repeat ; }
+
+.hpn-icon-refresh {	background: url('images/hpn_icons/refresh.png') no-repeat ; }
+
+.hpn-icon-role {	background: url('images/hpn_icons/role.png') no-repeat ; }
+
+.hpn-icon-cstyle {	background: url('images/hpn_icons/cstyle.png') no-repeat ; }
+
+.hpn-icon-supervise {	background: url('images/hpn_icons/supervise.png') no-repeat ; }
+
+.hpn-icon-logonStts {	background: url('images/hpn_icons/logonStts.png') no-repeat ; }
+
+.hpn-icon-turnRight {	background: url('images/hpn_icons/turnRight.png') no-repeat ; }
+
+.hpn-icon-turnLeft {	background: url('images/hpn_icons/turnLeft.png') no-repeat ; }

@@ -90,7 +90,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<ResourcePO> implements 
 		if (!StringUtils.isBlank(syresource.getId())) {
 			ResourcePO t = getById(syresource.getId());
 			ResourcePO oldParent = t.getFrmResource();
-			BeanUtils.copyNotNullProperties(syresource, t, new String[] { "createdatetime" });
+			BeanUtils.copyNotNullProperties(syresource, t, new String[] { "createDatetime " });
 			if (syresource.getFrmResource() != null) {// 说明要修改的节点选中了上级节点
 				ResourcePO pt = getById(syresource.getFrmResource().getId());// 上级节点
 				isParentToChild(t, pt, oldParent);// 说明要将当前节点修改到当前节点的子或者孙子下
@@ -140,10 +140,10 @@ public class ResourceServiceImpl extends BaseServiceImpl<ResourcePO> implements 
 			Collections.sort(l, new Comparator<RolePO>() {
 				@Override
 				public int compare(RolePO o1, RolePO o2) {
-					if (o1.getCreatedatetime().getTime() > o2.getCreatedatetime().getTime()) {
+					if (o1.getCreateDatetime().getTime() > o2.getCreateDatetime().getTime()) {
 						return 1;
 					}
-					if (o1.getCreatedatetime().getTime() < o2.getCreatedatetime().getTime()) {
+					if (o1.getCreateDatetime().getTime() < o2.getCreateDatetime().getTime()) {
 						return -1;
 					}
 					return 0;
@@ -158,10 +158,10 @@ public class ResourceServiceImpl extends BaseServiceImpl<ResourcePO> implements 
 				Collections.sort(l, new Comparator<OrganizationPO>() {
 					@Override
 					public int compare(OrganizationPO o1, OrganizationPO o2) {
-						if (o1.getCreatedatetime().getTime() > o2.getCreatedatetime().getTime()) {
+						if (o1.getCreateDatetime().getTime() > o2.getCreateDatetime().getTime()) {
 							return 1;
 						}
-						if (o1.getCreatedatetime().getTime() < o2.getCreatedatetime().getTime()) {
+						if (o1.getCreateDatetime().getTime() < o2.getCreateDatetime().getTime()) {
 							return -1;
 						}
 						return 0;

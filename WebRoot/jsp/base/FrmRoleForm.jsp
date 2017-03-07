@@ -4,7 +4,7 @@
 <%
 	String contextPath = request.getContextPath();
 	SessionInfo sessionInfo = (SessionInfo) session.getAttribute(ConfigUtil.getSessionInfoName());
-	String operaterLoginname =sessionInfo.getUser().getLoginname();
+	String operater =sessionInfo.getUser().getLoginName();
 	String id = request.getParameter("id");
 	if (id == null) {
 		id = "";
@@ -58,7 +58,7 @@
 </head>
 <body>
 	<form method="post" class="form">
-		<input name="data.operaterLoginname" value="<%=operaterLoginname%>" type="hidden" />
+		<input name="data.operater" value="<%=operater%>" type="hidden" />
 		<fieldset>
 			<legend>角色基本信息</legend>
 			<table class="table" style="width: 100%;">

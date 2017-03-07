@@ -20,7 +20,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "FRM_RESOURCE", schema = "")
+@Table(name = "frm_resource", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class ResourcePO extends Base implements java.io.Serializable {

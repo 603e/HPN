@@ -34,7 +34,7 @@
 			title : '编辑机构信息',
 			url : frm.contextPath + '/jsp/base/FrmOrganizationForm.jsp?id=' + id,
 			buttons : [ {
-				text : '编辑',
+				text : '修改',
 				handler : function() {
 					dialog.find('iframe').get(0).contentWindow.submitForm(dialog, grid, parent.$);
 				}
@@ -111,12 +111,12 @@
 			}, {
 				width : '150',
 				title : '创建时间',
-				field : 'createdatetime',
+				field : 'createDatetime ',
 				hidden : true
 			}, {
 				width : '150',
 				title : '修改时间',
-				field : 'updatedatetime',
+				field : 'updateDatetime',
 				hidden : true
 			}, {
 				width : '60',
@@ -133,7 +133,7 @@
 						str += frm.formatString('<img class="iconImg ext-icon-note" title="查看" onclick="showFun(\'{0}\');"/>', row.id);
 					<%}%>
 					<%if (securityUtil.havePermission("/base/frmOrganization!update")) {%>
-						str += frm.formatString('<img class="iconImg ext-icon-note_edit" title="编辑" onclick="editFun(\'{0}\');"/>', row.id);
+						str += frm.formatString('<img class="iconImg ext-icon-note_edit" title="修改" onclick="editFun(\'{0}\');"/>', row.id);
 					<%}%>
 					<%if (securityUtil.havePermission("/base/frmOrganization!grant")) {%>
 						str += frm.formatString('<img class="iconImg ext-icon-group_key" title="授权" onclick="grantFun(\'{0}\');"/>', row.id);

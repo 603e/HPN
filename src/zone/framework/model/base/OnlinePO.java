@@ -15,16 +15,16 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "FRM_ONLINE", schema = "")
+@Table(name = "frm_online", schema = "")
 @DynamicInsert(true)
 @DynamicUpdate(true)
 public class OnlinePO implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
-	private String loginname;
+	private String loginName;
 	private String ip;
-	private Date createdatetime;
+	private Date createDatetime;
 	private String type;// 1.登录0.注销
 
 	public OnlinePO() {
@@ -34,11 +34,11 @@ public class OnlinePO implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public OnlinePO(String id, String loginname, String ip, Date createdatetime, String type) {
+	public OnlinePO(String id, String loginName, String ip, Date createDatetime, String type) {
 		this.id = id;
-		this.loginname = loginname;
+		this.loginName = loginName;
 		this.ip = ip;
-		this.createdatetime = createdatetime;
+		this.createDatetime = createDatetime;
 		this.type = type;
 	}
 
@@ -55,13 +55,13 @@ public class OnlinePO implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "loginname", length = 20)
-	public String getLoginname() {
-		return this.loginname;
+	@Column(name = "loginName", length = 20)
+	public String getLoginName() {
+		return this.loginName;
 	}
 
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
 	}
 
 	@Column(name = "ip", length = 100)
@@ -74,18 +74,18 @@ public class OnlinePO implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATEDATETIME", length = 7)
-	public Date getCreatedatetime() {
-		if (this.createdatetime != null)
-			return this.createdatetime;
+	@Column(name = "createDatetime", length = 7)
+	public Date getCreateDatetime() {
+		if (this.createDatetime != null)
+			return this.createDatetime;
 		return new Date();
 	}
 
-	public void setCreatedatetime(Date createdatetime) {
-		this.createdatetime = createdatetime;
+	public void setCreateDatetime(Date createDatetime) {
+		this.createDatetime = createDatetime;
 	}
 
-	@Column(name = "TYPE", length = 1)
+	@Column(name = "type", length = 1)
 	public String getType() {
 		return this.type;
 	}
