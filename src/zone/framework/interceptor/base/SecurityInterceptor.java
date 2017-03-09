@@ -5,6 +5,7 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
+
 import zone.framework.model.base.SessionInfo;
 import zone.framework.model.base.OrganizationPO;
 import zone.framework.model.base.ResourcePO;
@@ -28,11 +29,12 @@ public class SecurityInterceptor extends MethodFilterInterceptor {
 		//ActionContext actionContext = actionInvocation.getInvocationContext();
 		SessionInfo sessionInfo = (SessionInfo) ServletActionContext.getRequest().getSession().getAttribute(ConfigUtil.getSessionInfoName());
 		String servletPath = ServletActionContext.getRequest().getServletPath();
-
+		String url = ServletActionContext.getRequest().getServletPath();
+		logger.info(new StringBuilder("进入session拦截器->访问路径为[").append(url).append("]").toString() );
+		if(url.contains("/app/")){
+			return actionInvocation.invoke();
+		}
 		servletPath = StringUtils.substringBeforeLast(servletPath, ".");// 去掉后面的后缀 *.do *.action之类的
-
-		logger.info("进入权限拦截器->访问的资源为：[" + servletPath + "]");
-
 		Set<RolePO> roles = sessionInfo.getUser().getFrmRoles();
 		for (RolePO role : roles) {
 			for (ResourcePO resource : role.getFrmResources()) {
@@ -50,7 +52,6 @@ public class SecurityInterceptor extends MethodFilterInterceptor {
 				}
 			}
 		}
-
 		String errMsg = "您没有访问此功能的权限！功能路径为[" + servletPath + "]请联系管理员给你赋予相应权限。";
 		logger.info(errMsg);
 		ServletActionContext.getRequest().setAttribute("msg", errMsg);

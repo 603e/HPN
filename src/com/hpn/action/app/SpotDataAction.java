@@ -3,17 +3,23 @@ package com.hpn.action.app;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.servlet.ServletInputStream;
+
+
+
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import zone.framework.action.BaseAction;
-import zone.framework.model.easyui.Json;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hpn.model.nv.CollectionsPO;
 import com.hpn.model.nv.SpotDataPO;
 import com.hpn.service.nv.CollectionsServiceI;
 import com.hpn.service.nv.SpotDataServiceI;
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 
 /**
  * 客户管理
@@ -25,7 +31,7 @@ import com.hpn.service.nv.SpotDataServiceI;
  */
 @Namespace("/app/hpn")
 @Action(value = "/spotData")
-public class SpotDataAction extends BaseAction<SpotDataPO> {
+public class SpotDataAction extends BaseAction<SpotDataPO>{
 
 	/**
 	 * 
@@ -50,13 +56,32 @@ public class SpotDataAction extends BaseAction<SpotDataPO> {
 	/**
 	 * 获取导览当前位置的藏品信息
 	 */
-	synchronized public void obtainCollectionses() {
-		if (data != null) {
+	public void obtainCollectionses() {
+		try {
+			if (data == null) {
+				ServletInputStream inputStream = getRequest().getInputStream();
+				ByteOutputStream bos = new ByteOutputStream();
+				byte[] buf = new byte[1024];
+				while ((inputStream.read(buf)) != -1) {
+					bos.write(buf, 0, buf.length);
+				}
+				JSONObject requestJson = JSONObject.parseObject(bos.toString());
+				data = new SpotDataPO();
+				data.setMacCode(requestJson.getString("macCode"));
+				data.setLatitude(requestJson.getDoubleValue("latitude"));
+				data.setLongitude(requestJson.getDoubleValue("longitude"));
+				data.setAzimuth(requestJson.getIntValue("azimuth"));
+				data.setOperater(requestJson.getString("operater"));
+				bos.close();
+			}
+			
 			List<CollectionsPO> pos = collectionsService.obtainCollectionses(data.getLatitude(),data.getLongitude(),data.getAzimuth());
 			data.setCollectionses( new HashSet<CollectionsPO>(pos));
 			service.save(data);
 			writeJson(data);
-		}
-		
+		} catch (Exception e) { 
+            e.printStackTrace();
+        }
 	}
+	
 }

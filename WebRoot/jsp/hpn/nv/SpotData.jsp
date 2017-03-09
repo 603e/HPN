@@ -55,25 +55,25 @@
 			pageSize : 50,
 			pageList : [ 5, 10,50, 100, 500 ],
 			frozenColumns : [ [ {
-				width : '80',
+				width : '130',
 				title : 'MAC码',
 				field : 'macCode',
 				sortable : true
 			},
 			{
-				width : '120',
+				width : '100',
 				title : '纬度',
 				field : 'latitude',
 				sortable : true
 			},
 			{
-				width : '120',
+				width : '100',
 				title : '经度',
 				field : 'longitude',
 				sortable : true
 			},
 			{
-				width : '120',
+				width : '60',
 				title : '方位角',
 				field : 'azimuth',
 				sortable : true

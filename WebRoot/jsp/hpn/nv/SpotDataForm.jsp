@@ -18,7 +18,7 @@
 <script type="text/javascript">
 	var obtainCollections = function($dialog, $grid, $pjq) {
 		if ($('form').form('validate')) {
-			var url = frm.contextPath + '/hpn/nv/spotData!obtainCollectionses.do?flag=app';
+			var url = frm.contextPath + '/hpn/nv/spotData!obtainCollectionses.do';
 			$.post(url, frm.serializeObject($('form')), function(result) {
 				if (result.success) {
 					$grid.datagrid('load');
@@ -40,7 +40,7 @@
 				if (result.id != undefined) {
 					$('form').form('load', {
 						'data.id' : result.id,
-						'data.MACCode' : result.MACCode,
+						'data.macCode' : result.macCode,
 						'data.latitude' : result.latitude,
 						'data.longitude' : result.longitude,
 						'data.azimuth' : result.azimuth
@@ -61,7 +61,7 @@
 			<table class="table" style="width: 100%;">
 				<tr>
 					<th>MAC码</th>
-					<td><input name="data.MACCode" value="08:00:20:0A:8C:6D" class="easyui-validatebox" data-options="required:true" /></td>
+					<td><input name="data.macCode" value="08:00:20:0A:8C:6D" class="easyui-validatebox" data-options="required:true" /></td>
 				</tr>
 				<tr>
 					<th>纬度</th>

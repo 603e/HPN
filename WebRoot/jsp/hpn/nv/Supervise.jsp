@@ -28,13 +28,13 @@
 
 <div id='map'></div>
 <div id='control'>
-	<img class="controlImg hpn-icon-turnRight" style="height: 48px; width: 48px;" onclick="turnRightFun();"/>
-	<img class="controlImg hpn-icon-turnLeft" title="左转" onclick="turnLeftFun();"/>
+	<img class="controlImg hpn-icon-turnRight" onclick="turnRightFun();"/>
+	<img class="controlImg hpn-icon-turnLeft" onclick="turnLeftFun();"/>
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFwZXIiLCJhIjoiY2l3dm9qdzRiMDAxMTJ6cGY2ZHlzOTRvNCJ9.WcJV0GCgk_4XXHa8cnmi_Q';
 var styleLocation = 'mapbox://styles/maper/ciwvpz28c002z2qpqxdg2m5cy';
-styleLocation = 'mapbox://styles/maper/cizfl4jyx007m2sji1ndyc4nl';
+// styleLocation = 'mapbox://styles/maper/cizfl4jyx007m2sji1ndyc4nl';
 //styleLocation = '../../../mapboxData0306.json'
 var map = new mapboxgl.Map({
     container: 'map', // container id

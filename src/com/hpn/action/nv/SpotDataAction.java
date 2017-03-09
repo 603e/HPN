@@ -65,8 +65,8 @@ public class SpotDataAction extends BaseAction<SpotDataPO> {
 	synchronized public void obtainCollectionses() {
 		if (data != null) {
 			List<CollectionsPO> pos = collectionsService.obtainCollectionses(data.getLatitude(),data.getLongitude(),data.getAzimuth());
+			service.save(data);
 			data.setCollectionses( new HashSet<CollectionsPO>(pos));
-			save();
 			writeJson(data);
 		}
 		
