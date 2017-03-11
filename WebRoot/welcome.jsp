@@ -44,13 +44,16 @@ $(function() {
         go("#navigate", 1500, "185px", 1200, 1000, "0px", 2000);
         go("#supervise", 2000, "185px", 1200, 1000, "0px", 2000);
     }, 3000);
+    $("#naviImg").attr("src",frm.contextPath + "/style/images/navi.png");
+    $("#navigateImg").attr("src",frm.contextPath + "/style/images/navigate.png");
+    $("#superviseImg").attr("src",frm.contextPath + "/style/images/supervise.png");
 });
 </script>
 </head>
 <body>
 	<div class="outside" >
     	<div id="navi" class="inside">
-        	<img width="180px" height="180px" src="/HPN/style/images/navi.png" />
+        	<img id="naviImg" width="180px" height="180px" />
         	<div id="text">
             	<span>导览</span>
             	<p></p>
@@ -60,7 +63,7 @@ $(function() {
 	</div>
 	<div class="outside">
     	<div id="navigate" class="inside">
-        	<img width="180px" height="180px" src="/HPN/style/images/navigate.png" />
+        	<img id="navigateImg" width="180px" height="180px"/>
         	<div id="text">
             	<span>导航</span>
             	<p></p>
@@ -70,7 +73,7 @@ $(function() {
 	</div>
 	<div class="outside">
     	<div id="supervise" class="inside">
-        	<img width="180px" height="180px" src="/HPN/style/images/supervise.png" />
+        	<img id="superviseImg" width="180px" height="180px"/>
         	<div id="text">
             	<span>监控平台</span>
             	<p></p>
